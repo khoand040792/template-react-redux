@@ -1,0 +1,16 @@
+.navbar-static-top{
+    background-color: #22CFBC;
+    box-shadow: 2px 2px rgb(6, 102, 92);
+    height: 50px;
+}
+.logo-lg{
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+}
+.logo-mini{
+    padding-left: 0;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}

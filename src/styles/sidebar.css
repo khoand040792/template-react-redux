@@ -1,0 +1,24 @@
+.main-header{
+    background-color: #137E73;
+    box-shadow:  1px 2px #fff;
+    height: 50px;
+}
+.main-sidebar{
+    margin-top: 15px;
+    /* padding-left: 15px; */
+    background-color: #073532;
+}
+.sidebar-toggle, .fa, .margin-icon-sidebar{
+    color: #fff;
+}
+.hidden-xs{
+    color: #073532;
+    font-size: 16px;
+    font-weight: bold;
+}
+.sidebar-menu > li:hover{
+    background-color: #57908E;
+}
+.sidebar-menu > .active{
+    background-color: rgb(69, 143, 140);
+}
