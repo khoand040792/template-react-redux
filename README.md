@@ -3,4 +3,4 @@ Template for project react using redux pattern, integrate with boostrap and Admi
 Project is structured base on template : https://github.com/facebook/create-react-app
 
 Folder:         
-	![alt text](https://ibb.co/edehzy)
+	![alt text](https://image.ibb.co/cqcD6d/2018_07_04_11_09_26.png)
