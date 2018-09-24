@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { RemoveTokenPersitant } from '../utilities/utilities';
 import '../../styles/header.css'
 
 class Header extends React.Component {
 
-    logout(e) {
-        e.preventDefault();
+    logOut = () => {
+        RemoveTokenPersitant();
     }
 
     pushMenu(e) {
@@ -47,13 +48,13 @@ class Header extends React.Component {
                     <div className="navbar-custom-menu">
                         <ul className="nav navbar-nav">
                             <li className="user user-menu">
-                                <Link to={"/login"} data-toggle="control-sidebar" className="pull-left">
+                                <a href='/login' onClick={this.logOut} data-toggle="control-sidebar" className="pull-left">
                                     <img src={require('../../styles/img/profile-user.png')}
                                         alt="user profile"
                                         height="50px"
                                         width="50px" />
                                     <span className="hidden-xs"> Khoa.nd </span>
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>

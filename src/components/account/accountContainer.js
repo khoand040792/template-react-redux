@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import Account from '../account/account';
 import loginUser from '../../actions/accountActions/actionCreators';
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
     return {
-        token: state.accesstken
+        token: state.account.accesstken,
+        isAuth: state.account.isAuthenticated
     }
 }
 
@@ -14,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export const AccountContainer = connect(mapStateToProps, mapDispatchToProps)(Account);
+export const AccountContainer = withRouter(connect(mapStateToProps, mapDispatchToProps)(Account));

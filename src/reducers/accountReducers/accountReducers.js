@@ -6,19 +6,10 @@ import { ACCOUNT_LOGIN } from '../../actions/accountActions/actionName.js'
 * @param action: action dispatched from Home component
 *
 */
-export default function accountReducers(state = {
-    account: {
-        accesstoken: ""
-    }
-}, action) {
+export default function accountReducers(state = {}, action) {
     switch (action.type) {
         case ACCOUNT_LOGIN:
-            return {
-                ...state, account: {
-                    ...state.account,
-                    accesstoken: action.accesstoken
-                }
-            };
+            return { ...state, accesstoken: action.accesstoken, isAuthenticated: true };
         default:
             return state;
     }

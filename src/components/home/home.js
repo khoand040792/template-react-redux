@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../common/component/Header'
 import Sidebar from '../../common/component/Sidebar'
 import { Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 export default class Home extends Component {
 
@@ -9,7 +10,13 @@ export default class Home extends Component {
         this.props.increase(this.props.countNumber);
     }
 
+    onChangeSearch = (e) => {
+        e.preventDefault();
+        this.props.searchTable(e.target.value);
+    }
+
     render() {
+        const { isLoading,dataTables } = this.props;
         if (true) {
             return (
                 <div className="wrapper" >
@@ -25,10 +32,16 @@ export default class Home extends Component {
                                 }
                                 ref="numberCount"
                             >Click to increase number</button>
+                            {isLoading ? <h1 className="text-bold">Searching...</h1> : <h2 className="text-bold">{dataTables.join(', ')}</h2>}
+                            <div className="form-group">
+                                <input className="form-control" onChange={this.onChangeSearch} />
+                            </div>
                         </div>
                     </div>
                 </div>
             )
+
+
         } else {
             return (
                 //pathname: "/login", state: { from: props.location }                
@@ -37,3 +50,10 @@ export default class Home extends Component {
         }
     }
 }
+
+Home.propTypes = {
+    increase: PropTypes.func,
+    isLoading: PropTypes.bool,
+    searchTable: PropTypes.func,
+    dataTables: PropTypes.array
+};

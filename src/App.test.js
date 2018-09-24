@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import assert from 'assert';
+import { TestMiddleware } from './test/midleware/utilities.js'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+/*
+ * Test middleware
+ * 
+*/
+TestMiddleware(assert);
+
