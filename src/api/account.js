@@ -16,7 +16,7 @@ let AccountApi = {
          * call success save token to localStorare for persitance data when refresh page
          */
         SetTokenPersitant('_fakeToken_');
-        return {username, password};
+        return { username, password };
     }
-};
+}
 export default AccountApi;

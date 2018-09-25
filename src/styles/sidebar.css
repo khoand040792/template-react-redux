@@ -22,3 +22,7 @@
 .sidebar-menu > .active{
     background-color: rgb(69, 143, 140);
 }
+
+.sidebar-menu > li:hover{
+    cursor: pointer;
+}

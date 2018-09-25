@@ -9,16 +9,22 @@ import { AccountContainer } from './components/account/accountContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { createBrowserHistory } from 'history'
 import { ConnectedRouter } from 'connected-react-router'
+import Header from './common/component/Header'
+import Sidebar from './common/component/Sidebar'
 import './styles/main.css';
-import './styles/font-awesome.min.css'
 import './styles/AdminLTE.min.css'
 import './styles/_all-skins.min.css'
+import './styles/font-awesome.min.css'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     store.getState().account.isAuthenticated === true
-      ? <Component {...props} />
-      : <Redirect to={{
+      ? <div className="wrapper" >
+        <Header />
+        <Sidebar />
+        <Component {...props} />
+      </div> :
+      <Redirect to={{
         pathname: '/login',
         state: { from: props.location }
       }} />
@@ -26,8 +32,19 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 )
 const history = createBrowserHistory();
 
+// fake component
 const ABC = () => (
-  <div>abc componet</div>
+  <div className="content-wrapper">abc componet</div>
+)
+
+const NotFoundPage = () => (
+  <div className="wrapper text-center">
+    <img src={require('./styles/img/not_found_page.jpg')}
+      alt="Page Not Found 404"
+      height="100%"
+      width="100%"
+    />
+  </div>
 )
 
 render(
@@ -37,11 +54,7 @@ render(
         <Route exact path="/login" component={AccountContainer} />
         <PrivateRoute exact path='/' component={HomeContainer} />
         <PrivateRoute exact path='/forecast' component={ABC} />
-        <Route component={() => (
-          <div className="wrapper text-center">
-            <img src={require('./styles/img/not_found_page.jpg')} alt="Page Not Found 404" height="100%" width="100%" />
-          </div>
-        )} />
+        <Route component={NotFoundPage} />
       </Switch>
     </ConnectedRouter>
   </Provider>,

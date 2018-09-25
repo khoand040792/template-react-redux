@@ -1,16 +1,45 @@
 .navbar-static-top{
-    background-color: #22CFBC;
-    box-shadow: 2px 2px rgb(6, 102, 92);
-    height: 50px;
+    height: 52px;
 }
-.logo-lg{
-    color: #fff;
-    font-size: 35px;
-    font-weight: bold;
+
+.skin-blue .main-header .logo {
+    background: #fff !important;
 }
-.logo-mini{
-    padding-left: 0;
+
+.skin-blue .main-header .navbar {
+    background: #2196f3 !important;
+}
+
+header .navbar-nav>li {
+    padding: auto 1px;
     color: #fff;
-    font-size: 25px;
-    font-weight: bold;
+}
+.nav > li {
+    display: block;
+    margin: 0 8px;
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+.btn-logout{
+    color: #fff;
+}
+
+a.btn-logout:hover{
+    background: none !important;
+    cursor: pointer;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid\9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }
